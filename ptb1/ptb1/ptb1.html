@@ -1,0 +1,21 @@
+<p>ptb1 works!</p>
+<table>
+    <tr>
+        <td>A:</td>
+        <td><input type="text" #input_a></td>
+    </tr>
+    <tr>
+        <td>B:</td>
+        <td><input type="text" #input_b></td>
+    </tr>
+    <tr>
+        <td>Result</td>
+        <td #result></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="get_solution(input_a.value, input_b.value, result)">Get Result</button> 
+            <button>Clear</button>
+        </td>
+    </tr>
+</table>

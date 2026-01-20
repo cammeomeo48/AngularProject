@@ -1,0 +1,40 @@
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.customer-table th,
+.customer-table td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: left;
+}
+
+.customer-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.group-row td {
+  font-weight: bold;
+  background-color: #e0e0e0;
+  padding: 6px 8px;
+}
+
+.img-cell {
+  width: 160px;
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.error {
+  color: #b00020;
+  margin: 8px 0;
+}

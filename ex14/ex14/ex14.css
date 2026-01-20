@@ -1,0 +1,39 @@
+.catalog {
+  margin: 10px 0 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 6px 8px;
+}
+
+th {
+  background: #f2f2f2;
+  text-align: left;
+}
+
+.cate-table {
+  margin-bottom: 6px;
+}
+
+.product-table .price {
+  text-align: right;
+  width: 110px;
+}
+
+.product-table .picture {
+  width: 80px;
+  text-align: center;
+}
+
+.product-table img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}

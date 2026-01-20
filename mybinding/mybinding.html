@@ -1,0 +1,45 @@
+<p [style]="personal_style">Personal Information</p>
+<table>
+  <tr>
+    <td>Full Name:</td>
+    <td><input type="text" [value]="fullName" /></td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><input type="email" [value]="email" [disabled]="readonly" /></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>First Name:</td>
+    <td>
+      <input type="text" #firstName />
+    </td>
+  </tr>
+  <tr>
+    <td>Middle Name:</td>
+    <td>
+      <input type="text" #middleName />
+    </td>
+  </tr>
+  <tr>
+    <td>Last Name:</td>
+    <td>
+      <input type="text" #lastName />
+    </td>
+  </tr>
+  <tr>
+    <td>Full Name:</td>
+    <td>
+      <input type="text" [value]="computedFullName" readonly />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button (click)="setFullName(firstName.value, middleName.value, lastName.value)">
+        Set Full Name
+      </button>
+    </td>
+  </tr>
+</table>
