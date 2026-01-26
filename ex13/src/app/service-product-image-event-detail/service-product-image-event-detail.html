@@ -1,0 +1,9 @@
+<div *ngIf="selectedProduct">
+  <h2>Product Details</h2>
+  <p><strong>ID:</strong> {{ selectedProduct.ProductId }}</p>
+  <p><strong>Name:</strong> {{ selectedProduct.ProductName }}</p>
+  <p><strong>Price:</strong> {{ selectedProduct.Price }}</p>
+  <img [src]="selectedProduct.Image" width="200" height="200" />
+  <br>
+  <button (click)="goBack()">Go Back</button>
+</div>
