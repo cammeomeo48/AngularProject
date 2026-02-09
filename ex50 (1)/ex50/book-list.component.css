@@ -1,34 +1,49 @@
 .container {
-  padding: 20px;
+  padding: 30px;
   max-width: 1400px;
   margin: 0 auto;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
 }
 
 h2 {
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 24px;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .actions {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn {
-  padding: 8px 16px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #10b981;
   color: white;
+  border: 2px solid #10b981;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #059669;
+  border-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .loading {
@@ -42,27 +57,29 @@ h2 {
   width: 100%;
   border-collapse: collapse;
   background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .table thead {
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .table th {
-  padding: 12px 8px;
+  padding: 16px 12px;
   text-align: left;
-  border: 1px solid #dee2e6;
-  font-weight: 600;
-  font-size: 12px;
-  color: #495057;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+  letter-spacing: 0.5px;
 }
 
 .table td {
-  padding: 12px 8px;
-  border: 1px solid #dee2e6;
+  padding: 16px 12px;
+  border-bottom: 1px solid #e9ecef;
   font-size: 13px;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .book-title {
@@ -88,18 +105,20 @@ h2 {
 .btn-link {
   background: none;
   border: none;
-  color: #007bff;
+  color: #667eea;
   cursor: pointer;
-  padding: 0 4px;
+  padding: 4px 8px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .btn-link:hover {
+  color: #764ba2;
   text-decoration: underline;
-  color: #0056b3;
 }
 
 tr:hover {
-  background-color: #f8f9fa;
+  background-color: #f0f4ff;
 }
