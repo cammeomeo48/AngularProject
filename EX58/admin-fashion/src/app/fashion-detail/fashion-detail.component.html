@@ -1,0 +1,28 @@
+<div class="row" *ngIf="fashion">
+    <div class="col-md-4">
+        <img [src]="fashion.thumbnail" alt="thumbnail" class="img-fluid rounded shadow-sm w-100 object-fit-cover"
+            style="max-height: 400px;">
+    </div>
+    <div class="col-md-8">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">{{fashion.title}}</h2>
+                <span class="badge bg-primary fs-6">{{fashion.style}}</span>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-4"><small>Created Date: {{fashion.createdDate | date:'fullDate'}}</small></p>
+                <h4>Details</h4>
+                <div class="border p-3 rounded bg-light" [innerHTML]="fashion.details"></div>
+            </div>
+            <div class="card-footer bg-white text-end">
+                <a [routerLink]="['/fashions/edit', fashion._id]" class="btn btn-warning me-2">Edit</a>
+                <a routerLink="/fashions" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!fashion" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

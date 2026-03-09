@@ -1,0 +1,39 @@
+<div class="card shadow-sm">
+    <div class="card-header bg-white py-3">
+        <h3 class="mb-0">{{ isEditMode ? 'Edit Fashion' : 'Create New Fashion' }}</h3>
+    </div>
+    <div class="card-body">
+        <form (ngSubmit)="saveFashion()" #fashionForm="ngForm">
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="title" name="title" [(ngModel)]="fashion.title" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="style" class="form-label">Style <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="style" name="style" [(ngModel)]="fashion.style" required
+                    placeholder="e.g. Casual, Formal, Sporty">
+            </div>
+
+            <div class="mb-3">
+                <label for="thumbnail" class="form-label">Thumbnail URL</label>
+                <input type="text" class="form-control" id="thumbnail" name="thumbnail" [(ngModel)]="fashion.thumbnail">
+                <div *ngIf="fashion.thumbnail" class="mt-2">
+                    <img [src]="fashion.thumbnail" alt="Preview" height="100" class="img-thumbnail object-fit-cover">
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="details" class="form-label">Details (HTML)</label>
+                <ckeditor name="details" [(ngModel)]="fashion.details"></ckeditor>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <a routerLink="/fashions" class="btn btn-secondary me-2">Cancel</a>
+                <button type="submit" class="btn btn-primary" [disabled]="!fashionForm.form.valid">Save Fashion</button>
+            </div>
+
+        </form>
+    </div>
+</div>

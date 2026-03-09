@@ -1,0 +1,30 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="mb-0">Exercise 61: Login with Cookies</h4>
+            </div>
+            <div class="card-body p-4">
+
+                <div *ngIf="message" class="alert mb-4" [ngClass]="isSuccess ? 'alert-success' : 'alert-danger'">
+                    {{ message }}
+                </div>
+
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username"
+                            required placeholder="Try: admin or tranduythanh">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" [disabled]="!loginForm.valid">Login</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

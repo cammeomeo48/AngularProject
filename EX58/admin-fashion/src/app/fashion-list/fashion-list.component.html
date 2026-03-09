@@ -1,0 +1,39 @@
+<div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+        <h3 class="mb-0">Fashion List</h3>
+        <a routerLink="/fashions/new" class="btn btn-success">+ Create New</a>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover table-striped mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Thumbnail</th>
+                    <th>Title</th>
+                    <th>Style</th>
+                    <th>Created Date</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let f of fashions">
+                    <td>
+                        <img [src]="f.thumbnail" alt="thumbnail" width="50" height="50"
+                            class="object-fit-cover rounded border">
+                    </td>
+                    <td class="align-middle fw-medium">{{f.title}}</td>
+                    <td class="align-middle"><span class="badge bg-secondary">{{f.style}}</span></td>
+                    <td class="align-middle">{{f.createdDate | date:'mediumDate'}}</td>
+                    <td class="align-middle text-end">
+                        <a [routerLink]="['/fashions', f._id]" class="btn btn-sm btn-info text-white me-2">View</a>
+                        <a [routerLink]="['/fashions/edit', f._id]"
+                            class="btn btn-sm btn-warning text-white me-2">Edit</a>
+                        <button (click)="deleteFashion(f._id)" class="btn btn-sm btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="fashions.length === 0" class="text-center py-5 text-muted">
+            No fashion items found.
+        </div>
+    </div>
+</div>

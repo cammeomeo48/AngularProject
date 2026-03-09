@@ -1,0 +1,38 @@
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-text bg-white"><i class="text-muted">Search</i></span>
+            <input type="text" class="form-control" placeholder="Search fashions by title or details..."
+                [(ngModel)]="searchText" (input)="applyFilter()">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <select class="form-select" [(ngModel)]="selectedStyle" (change)="applyFilter()">
+            <option value="">All Styles</option>
+            <option *ngFor="let style of styles" [value]="style">{{style}}</option>
+        </select>
+    </div>
+</div>
+
+<div *ngIf="filteredGroupedFashions | keyvalue as groups">
+    <div *ngIf="groups.length === 0" class="text-center py-5 text-muted">
+        No fashion items match your filter criteria.
+    </div>
+
+    <div *ngFor="let group of groups" class="mb-5">
+        <h3 class="border-bottom pb-2 mb-3 text-primary">{{group.key}}</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let fashion of group.value">
+                <div class="card h-100 shadow-sm fashion-card" [routerLink]="['/fashions', fashion._id]"
+                    style="cursor: pointer; transition: transform 0.2s;">
+                    <img [src]="fashion.thumbnail" class="card-img-top object-fit-cover border-bottom" alt="Thumbnail"
+                        style="height: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">{{fashion.title}}</h5>
+                        <p class="card-text text-muted small">Added: {{fashion.createdDate | date}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
